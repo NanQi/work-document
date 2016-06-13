@@ -11,6 +11,7 @@
 | SPC b b | buffer 列表     |
 | SPC b k | 杀死 buffer     |
 | SPC b d | 杀死当前 buffer |
+| SPC t n | 切换显示行号    |
 ** 编程
 |-------+--------------------|
 | z a   | 切换当前级别的展开 |
