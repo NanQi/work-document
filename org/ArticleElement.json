@@ -1,0 +1,40 @@
+[
+    {
+        "type": "text",
+        "text": {
+            "content": "文本",
+            "size": 1,
+            "blod": 0
+        }
+    },
+    {
+        "type": "image",
+        "url": "aaa.jpg",
+        "local": "wxfile.jpg",
+        "desc": "图片描述"
+    },
+    {
+        "type": "video",
+        "video": "video.mp4",
+        "cover": "video.jpg",
+        "local": "wxfile.mp4"
+    },
+    {
+        "type": "audio",
+        "audio": "audio.mp3",
+        "duration": 5,
+        "local": "wxfile.mp3"
+    },
+    {
+        "type": "title",
+        "content": "标题"
+    },
+    {
+        "type": "quote",
+        "content": "引用"
+    },
+    {
+        "type": "hr",
+        "theme": 1
+    }
+]
