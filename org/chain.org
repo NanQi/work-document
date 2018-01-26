@@ -1,0 +1,36 @@
+* 区块链笔记
+** 以太坊
+*** init.json
+#+BEGIN_SRC json
+{
+  "config": {
+        "chainId": 17,
+        "homesteadBlock": 0,
+        "eip155Block": 0,
+        "eip158Block": 0
+    },
+  "alloc"      : {},
+  "coinbase"   : "0x0000000000000000000000000000000000000000",
+  "difficulty" : "0x07000",
+  "extraData"  : "0x6e616e7169",
+  "gasLimit"   : "0x2fefd8",
+  "nonce"      : "0x0000000020140124",
+  "mixhash"    : "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "parentHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "timestamp"  : "0x00"
+}
+#+END_SRC
+- chainId 不能为 0，否则会报余额不足
+- nonce 不能相同，否则会自动发现
+- alloc 可以填入初始化账户资金，私有链挖矿速度快，不需要
+*** 启动命令
+- 启动控制台
+#+BEGIN_SRC shell
+geth --identity "zxlNode" --rpc --rpcport "8545" --datadir "./"  --port "30303"
+#+END_SRC
+
+- 启动 mist，需要先启动控制台
+#+BEGIN_SRC shell
+mist --rpc /path/geth.ipc
+#+END_SRC
+- 
