@@ -53,3 +53,50 @@
 **** 精华
 **** 删帖
 **** 禁用用户
+** 自助广告位
+*** 确定需求
+XXX
+
+后台需求：
+**** 用户等级
+**** 开通时引导关注公众号，用来打款
+*** 假接口
+**** GET /page/home
+banners: [{
+   img: '123.jpg',
+   url: 'http://123.com'
+}]
+url: 如果有 https 跳 webview，否则/pages/publishedPage?id=12354
+**** POST ads
+请求值：banner,article_id,begin_date,end_date,limit_money
+返回值：requestPayment 需要的 5 个参数
+广告只要发布，对应的文章不能改动
+验证：格式验证，开始时间不能小于结束时间，
+**** GET ads/0
+返回值：banner,article_id,begin_date,end_date,limit_money
+**** PUT ads/0
+banner,article_id
+**** GET ads
+参数：
+type: 1.全部 2.线上广告 3.待审核 4.已拒绝 5.已过期
+search: ''
+
+返回值：
+#+BEGIN_SRC json
+[{
+  id: 1,
+  title: "贪玩蓝月",
+  author: "古天乐",
+  created_at: "2018-1-31 12:00:00",
+  status: 1
+}]
+#+END_SRC
+**** POST ads/1/shenhe
+**** POST ads/2/huanyuan
+**** POST ads/3/xiajia
+*** 开发和测试用例
+**** 接口格式是否正确 | 不存在接口参数错误的问题
+**** 广告主投放广告，验证后台是否有此广告
+**** 平台审核通过，验证是否审核通过
+**** *广告会不会在指定的时间内出现*
+**** 每次点击广告需要扣费，扣费完需要验证是否当天不再展示
